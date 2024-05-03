@@ -9,6 +9,6 @@ class Todo extends Model
 {
     use HasFactory;
 
-    protected $table ='todo';
-    protected $fillable =['task','is_done'];
+    protected $table = 'todo';
+    protected $fillable = ['task', 'is_done'];
 }

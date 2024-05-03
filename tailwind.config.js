@@ -8,6 +8,8 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./vendor/brandymedia/turbine-ui-core/**/*.php",
+        "./node_modules/flowbite/**/*.js",
     ],
 
     theme: {
@@ -18,5 +20,5 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [forms, require("flowbite/plugin")],
 };

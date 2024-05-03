@@ -12,8 +12,10 @@ Route::get('/', function () {
 //     return view('ToDo.app');
 // });
 
-ROute::get('/todo',[TodoController::class,'index']);
-ROute::post('/todo',[TodoController::class,'store']);
+Route::get('/todo', [TodoController::class, 'index'])->name('todo');
+Route::post('/todo', [TodoController::class, 'store'])->name('todo.post');
+Route::put('/todo/{id}', [TodoController::class, 'update'])->name('todo.update');
+Route::delete('/todo/{id}', [TodoController::class, 'destroy'])->name('todo.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,4 +27,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
